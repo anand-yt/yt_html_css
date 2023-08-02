@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <title>SUBSCRIBE</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="register" id="registerPage">
+        <div class="left-side">
+          <img src="./images/image1.jpg" />
+        </div>
+        <div class="right-side">
+          <span>Register</span>
+          <form>
+            <input type="text" required placeholder="Name" />
+            <input type="email" required placeholder="Email" />
+            <input type="password" required placeholder="Password" />
+            <button type="submit" class="reg-btn">Register</button>
+          </form>
+          <div class="other_option">
+            Already have Account?
+            <a href="#">Login</a>
+          </div>
+        </div>
+      </div>
+      <div class="login" id="loginPage">
+        <div class="left-side">
+          <img src="./images/image2.jpg" />
+        </div>
+        <div class="right-side">
+          <span>Login</span>
+
+          <form>
+            <input type="email" required placeholder="Email" />
+            <input type="password" required placeholder="Password" />
+            <button type="submit" class="login-btn">LOGIN</button>
+          </form>
+          <div class="other_option">
+            Don't Have Account?
+            <a href="#">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const registerPage = document.getElementById("registerPage");
+      const loginPage = document.getElementById("loginPage");
+      const registerLink = document.querySelector(
+        "#registerPage .other_option a"
+      );
+      const loginLink = document.querySelector("#loginPage .other_option a");
+
+      registerLink.addEventListener("click", () => {
+        registerPage.style.display = "none";
+        loginPage.style.display = "flex";
+        loginPage.classList.add("page-animation");
+      });
+
+      loginLink.addEventListener("click", () => {
+        registerPage.style.display = "flex";
+        loginPage.style.display = "none";
+        registerPage.classList.add("page-animation");
+      });
+    </script>
+  </body>
+</html>
