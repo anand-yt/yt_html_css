@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Hiii</title>
+  </head>
+  <body>
+    <div class="center-container">
+      <button id="openModalBtn">Open Modal</button>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Subscribe</h2>
+        <img src="./images/subscribe.gif" />
+        <p class="subscribe-text">
+          Subscribe now for <span class="highlight">premium content</span> Dive
+          deep into the world of <span class="highlight">Node.js</span>,
+          <span class="highlight">MongoDB</span>, and
+          <span class="highlight">React.js</span> in-depth. Elevate your backend
+          and frontend skills with
+          <span class="highlight">amazing videos</span>.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // script.js
+      const openModalBtn = document.getElementById("openModalBtn");
+      const modal = document.getElementById("myModal");
+      const closeModal = document.getElementsByClassName("close")[0];
+
+      openModalBtn.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
